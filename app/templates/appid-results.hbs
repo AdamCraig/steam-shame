@@ -1,0 +1,11 @@
+<ul>
+  {{#each model as |achievement|}}
+  <li>
+    {{achievement.displayName}}
+    <br>
+    {{achievement.description}}
+    <br>
+    <img src={{achievement.icon}}>
+  </li>
+  {{/each}}
+</ul>
