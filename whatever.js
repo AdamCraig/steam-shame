@@ -50,6 +50,15 @@ app.get('/steam/user/:userid/profile', function(httpRequest, httpResponse) {
     });
 });
 
+app.get('/steam/user/:userid/profile/two-weeks-data', function(httpRequest, httpResponse) {
+    var url = 'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=' + apiKey + '&steamid=' + httpRequest.params.userid + '&format=json&count=3';
+    request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+      httpResponse.setHeader('Content-Type', 'application/json');
+      httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+      httpResponse.send(steamHttpBody);
+    });
+});
+
 app.use('/', express.static('public'));
 app.use(bodyParser.text());
 app.post('/frank-blog', function(httpRequest, httpResponse) {

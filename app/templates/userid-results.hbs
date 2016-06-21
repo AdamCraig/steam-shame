@@ -1,7 +1,16 @@
-<h1>{{model.personaname}}</h1>
-<h2>Steam ID: {{model.steamid}}</h2>
-<h2>{{get-online-status user=model}}</h2>
-<h2>Member since {{get-time-created user=model}}</h2>
-<img src={{model.avatarfull}}>
+<h1>{{model.user.personaname}}</h1>
+<h2>Steam ID: {{model.user.steamid}}</h2>
+{{#if model.user.gameextrainfo}}
+<h2>IN GAME: {{model.user.gameextrainfo}}</h2>
+{{/if}}
+<h2>{{get-online-status user=model.user}}</h2>
+<h2>Member since {{get-time-created user=model.user}}</h2>
+<img src={{model.user.avatarfull}}>
 
-<h2>Location: {{model.locstatecode}}, {{model.loccountrycode}}</h2>
+<h2>Location: {{#if model.user.locstatecode}} {{model.user.locstatecode}}{{#if model.user.loccountrycode}}, {{model.user.loccountrycode}}{{/if}}{{else}}{{model.user.loccountrycode}}{{/if}}</h2>
+
+{{#each model.recentGames as |recentGame|}}
+  <h3>{{recentGame.name}}</h3>
+  <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_icon_url}}.jpg">
+  <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_logo_url}}.jpg">
+{{/each}}
