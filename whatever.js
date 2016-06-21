@@ -15,8 +15,8 @@ app.get('/steam/fudgethepolice', function(httpRequest, httpResponse) {
   });
 });
 
-app.get('/steam/fuckthepolice', function(httpRequest, httpResponse) {
-  var url = 'http://backpack.tf/api/IGetUsers/v3/?key=' + bptfKey + '&steamids=76561198025036440';
+app.get('/steam/:steamid/hats', function(httpRequest, httpResponse) {
+  var url = 'http://backpack.tf/api/IGetUsers/v3/?key=' + bptfKey + '&steamids=' + httpRequest.params.steamid;
   request.get(url, function(error, steamHttpResponse, steamHttpBody) {
     httpResponse.setHeader('Content-Type', 'application/json');
     httpResponse.setHeader('Access-Control-Allow-Origin', '*');
