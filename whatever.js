@@ -36,12 +36,21 @@ app.get('/test9', function(httpRequest, httpResponse) {
 app.get('/steam/game/:appid/achievements', function(httpRequest, httpResponse) {
     // Calculate the Steam API URL we want to use
     var url = 'http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/' +
-        'v2/?key=' + key + '&appid=' +
-        httpRequest.params.appid;
+    'v2/?key=' + key + '&appid=' +
+    httpRequest.params.appid;
     request.get(url, function(error, steamHttpResponse, steamHttpBody) {
         httpResponse.setHeader('Content-Type', 'application/json');
         httpResponse.setHeader('Access-Control-Allow-Origin', '*');
         httpResponse.send(steamHttpBody);
+    });
+});
+
+app.get('/steam/user/:userid/profile', function(httpRequest, httpResponse) {
+    var url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' +  key + '&steamids=' + httpRequest.params.userid;
+    request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+      httpResponse.setHeader('Content-Type', 'application/json');
+      httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+      httpResponse.send(steamHttpBody);
     });
 });
 

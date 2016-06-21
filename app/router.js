@@ -6,8 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('appid-results', { path: '/appid-results/:appid'});
+  this.route('appid-results', { path: '/appid-results/:appid' });
   this.route('appid-search');
+  this.route('userid-search');
+  this.route('userid-results', { path: '/userid-results/:userid' });
 });
 
 export default Router;
