@@ -5,6 +5,10 @@ export default Ember.Route.extend({
    appIdSearch(params) {
      this.transitionTo('appid-results', params.appid);
    }
+
+   appNameSearch(params) {
+     this.transitionTo('appName-results', params.name);
+   }
  }
 
 });
