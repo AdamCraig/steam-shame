@@ -20,7 +20,6 @@ app.get('/steam/:steamid/hats', function(httpRequest, httpResponse) {
   request.get(url, function(error, steamHttpResponse, steamHttpBody) {
     httpResponse.setHeader('Content-Type', 'application/json');
     httpResponse.setHeader('Access-Control-Allow-Origin', '*');
-    console.log(steamHttpBody);
     httpResponse.send(steamHttpBody);
   });
 });
