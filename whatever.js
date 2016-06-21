@@ -1,15 +1,26 @@
 require('dotenv').load();
 var apiKey = process.env.apiKey;
+var bptfKey = process.env.bptfKey;
 var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 var app = express();
 
-app.get('/steam/fuckthepolice', function(httpRequest, httpResponse) {
-  var url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' + apiKey + '&steamids=76561198025036440';
+app.get('/steam/fudgethepolice', function(httpRequest, httpResponse) {
+  var url = 'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=' + apiKey + '&steamid=76561198025036440';
   request.get(url, function(error, steamHttpResponse, steamHttpBody) {
     httpResponse.setHeader('Content-Type', 'application/json');
     httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+    httpResponse.send(steamHttpBody);
+  });
+});
+
+app.get('/steam/fuckthepolice', function(httpRequest, httpResponse) {
+  var url = 'http://backpack.tf/api/IGetUsers/v3/?key=' + bptfKey + '&steamids=76561198025036440';
+  request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+    httpResponse.setHeader('Content-Type', 'application/json');
+    httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+    console.log(steamHttpBody);
     httpResponse.send(steamHttpBody);
   });
 });
