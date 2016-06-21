@@ -1,3 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class='navbar navbar-default'>
+ <div class='container-fluid'>
+   <ul class='nav navbar-nav'>
+     <li>{{#link-to 'index'}}<b class="glyphicon glyphicon-home"></b> Home{{/link-to}}</li>
+     <li>{{#link-to 'appid-search'}}<b class="glyphicon glyphicon-search"></b> AppId Search{{/link-to}}</li>
+     <li>{{#link-to 'index'}}<b class="glyphicon glyphicon-home"></b> Home{{/link-to}}</li>
+   </ul>
+ </div>
+</nav>
+
+<div class="container">
 
 {{outlet}}
+
+</div>

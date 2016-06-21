@@ -1,5 +1,4 @@
-import config from '../config/environment'
-var key = process.env.apiKey;
+var key = "";
 var express = require('express');
 var app = express();
 
