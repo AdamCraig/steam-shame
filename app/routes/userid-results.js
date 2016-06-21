@@ -8,4 +8,5 @@ export default Ember.Route.extend({
       return responseJSON.response.players[0];
     });
   },
+  
 });
