@@ -46,6 +46,10 @@ app.get('/steam/game/:appid/achievements', function(httpRequest, httpResponse) {
     });
 });
 
+app.get('steam/game/:appid', function(httpRequest, httpResponse) {
+  var url = 'http://api.steampowered.com/ISteamApps/GetAppList/v0001/'
+})
+
 app.use('/', express.static('public'));
 
 var bodyParser = require('body-parser');
