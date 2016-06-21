@@ -1,6 +1,7 @@
 <h1>{{model.personaname}}</h1>
+<h2>Steam ID: {{model.steamid}}</h2>
 <h2>{{get-online-status user=model}}</h2>
-<h2>Member since {{model.timecreated}}</h2>
+<h2>Member since {{get-time-created user=model}}</h2>
 <img src={{model.avatarfull}}>
 
 <h2>Location: {{model.locstatecode}}, {{model.loccountrycode}}</h2>
