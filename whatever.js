@@ -42,7 +42,7 @@ app.get('/steam/game/:appid/achievements', function(httpRequest, httpResponse) {
 });
 
 app.get('/steam/user/:userid/profile', function(httpRequest, httpResponse) {
-    var url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' +  key + '&steamids=' + httpRequest.params.userid;
+    var url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' +  apiKey + '&steamids=' + httpRequest.params.userid;
     request.get(url, function(error, steamHttpResponse, steamHttpBody) {
       httpResponse.setHeader('Content-Type', 'application/json');
       httpResponse.setHeader('Access-Control-Allow-Origin', '*');
