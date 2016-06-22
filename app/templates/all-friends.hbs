@@ -1,0 +1,9 @@
+<h1>All Friends:</h1>
+{{#if model}}
+  {{#each model as |friend|}}
+    {{#link-to 'userid-results' friend.steamid }}{{friend.steamid}}{{/link-to}}
+
+  {{/each}}
+{{else}}
+  nothing in model!
+{{/if}}
