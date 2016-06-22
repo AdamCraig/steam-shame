@@ -40,9 +40,9 @@
     "ember-data": "^2.4.2",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
-    "ember-moment": "7.0.0-beta.3",
     "ember-resolver": "^2.0.3",
     "import": "0.0.6",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.1",
+    "moment": "^2.13.0"
   }
 }
