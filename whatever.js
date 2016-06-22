@@ -15,6 +15,15 @@ app.get('/steam/fudgethepolice', function(httpRequest, httpResponse) {
   });
 });
 
+app.get('/currencyprice', function(httpRequest, httpResponse) {
+  var url = 'http://backpack.tf/api/IGetCurrencies/v1/?key=' + bptfKey;
+  request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+    httpResponse.setHeader('Content-Type', 'application/json');
+    httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+    httpResponse.send(steamHttpBody);
+  });
+});
+
 app.get('/steam/:steamid/hats', function(httpRequest, httpResponse) {
   var url = 'http://backpack.tf/api/IGetUsers/v3/?key=' + bptfKey + '&steamids=' + httpRequest.params.steamid;
   request.get(url, function(error, steamHttpResponse, steamHttpBody) {
