@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('userid-search');
   this.route('userid-results', { path: '/userid-results/:userid' });
   this.route('games');
+  this.route('game-search');
+  this.route('game-results', { path: '/game-results/:appid'});
 });
 
 export default Router;
