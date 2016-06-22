@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('appid-search');
   this.route('userid-search');
   this.route('userid-results', { path: '/userid-results/:userid' });
+  this.route('games');
 });
 
 export default Router;

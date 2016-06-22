@@ -29,6 +29,15 @@ app.get('/steam/civ5achievements', function(httpRequest, httpResponse) {
     });
 });
 
+app.get('/steam/games', function(httpRequest, httpResponse) {
+  var url ='http://api.steampowered.com/ISteamApps/GetAppList/v0001/';
+  request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+      httpResponse.setHeader('Content-Type', 'application/json');
+      httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+      httpResponse.send(steamHttpBody);
+  });
+});
+
 app.get('/steam/game/:appid/achievements', function(httpRequest, httpResponse) {
     // Calculate the Steam API URL we want to use
     var url = 'http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/' +

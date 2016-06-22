@@ -26,17 +26,17 @@ export default Ember.Component.extend({
   pieData: Ember.computed('this.gameOneHours', 'this.gameTwoHours', 'this.gameThreeHours', 'recentGames', function() {
     return [
       {
-          label: this.get('recentGames')[0].name,
+          label: this.get('recentGames')[0].name + " hours",
           value: this.get('gameOneHours'),
           color:"#878BB6"
       },
       {
-          label: this.get('recentGames')[1].name,
+          label: this.get('recentGames')[1].name + " hours",
           value : this.get('gameTwoHours'),
           color : "#4ACAB4"
       },
       {
-          label: this.get('recentGames')[2].name,
+          label: this.get('recentGames')[2].name + " hours",
           value : this.get('gameThreeHours'),
           color : "#FF8153"
       },
