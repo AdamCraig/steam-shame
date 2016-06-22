@@ -1,15 +1,9 @@
-<h1>game.name</h1>
+<h1>{{model.name}}</h1>
 
-<h4>game.detail_description</h4>
+<img src={{model.header_image}}>
 
-<ul>
-  {{#each model as |achievement|}}
-  <li>
-    {{achievement.displayName}}
-    <br>
-    {{achievement.description}}
-    <br>
-    <img src={{achievement.icon}}>
-  </li>
-  {{/each}}
-</ul>
+<h4>{{model.detailed_description}}</h4>
+
+
+
+<h4>Required: </h4>

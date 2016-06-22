@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('userid-results', { path: '/userid-results/:userid' });
   this.route('gamename-search');
   this.route('gamename-results');
+  // this.route('steam/games');
+  this.route('games');
 });
 
 export default Router;
