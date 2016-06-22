@@ -18,7 +18,6 @@ export default Ember.Route.extend({
         };
         return getGameID(params.game);
       });
-
       this.transitionTo('game-results', appID);
     },
 
