@@ -1,6 +1,6 @@
 {{#if model.allGames.games.length}}
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-xs-6">
       <h1>{{model.user.personaname}}</h1>
       <h2>Steam ID: {{model.user.steamid}}</h2>
       {{#if model.user.gameextrainfo}}
@@ -20,7 +20,7 @@
 
       {{two-week-data recentGames=model.recentGames}}
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-6">
       {{user-gamelibrary model=model.allGames}}
     </div>
 
