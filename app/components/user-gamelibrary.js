@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   sortBy: ['playtime_forever:desc'],
   sortedGames: Ember.computed.sort('model.games', 'sortBy'),
-  unplayedGames: Ember.computed('mode.games', function() {
+  unplayedGames: Ember.computed('model.games', function() {
     var total = this.get('model.games').length
     var unplayed = 0;
     var totalTime = 0;

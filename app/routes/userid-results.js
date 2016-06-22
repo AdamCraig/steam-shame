@@ -8,6 +8,8 @@ export default Ember.Route.extend({
 
     return Ember.RSVP.hash({
       user: Ember.$.getJSON(userURL).then(function(responseJSON) {
+        console.log("USER:");
+        console.log(responseJSON.response.players[0]);
         return responseJSON.response.players[0];
       }),
       recentGames: Ember.$.getJSON(recentGamesURL).then(function(responseJSON) {
