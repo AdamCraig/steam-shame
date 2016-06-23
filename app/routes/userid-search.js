@@ -3,7 +3,12 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     userIdSearch(params) {
-      this.transitionTo('userid-results', params.userid);
+      if (params.userid) {
+        this.transitionTo('userid-results', params.userid);
+      } else {
+        alert("Please enter a valid Steam ID.");
+      }
+
     },
   }
 });
