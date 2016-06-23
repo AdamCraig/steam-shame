@@ -15,7 +15,7 @@ export default Ember.Component.extend({
     var topTenArray = [];
     for(var index = 0; index < 10; index++) {
       topTenArray.push(this.get('sortedGames')[index]);
-    };
+    }
     console.log("topTenArray:");
     console.log(topTenArray);
     return topTenArray;

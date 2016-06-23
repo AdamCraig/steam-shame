@@ -42,7 +42,7 @@ export default Ember.Component.extend({
               value : this.get('gameThreeHours'),
               color : "#FF8153"
           },
-        ]
+        ];
       } else if (this.get('recentGames')[0] && this.get('recentGames')[1]) {
         return [
           {
@@ -55,7 +55,7 @@ export default Ember.Component.extend({
               value : this.get('gameTwoHours'),
               color : "#4ACAB4"
           },
-        ]
+        ];
       } else if (this.get('recentGames')[0]) {
         return [
           {
@@ -63,7 +63,7 @@ export default Ember.Component.extend({
               value: this.get('gameOneHours'),
               color:"#878BB6"
           },
-        ]
+        ];
       }
 
     } else {
@@ -83,7 +83,7 @@ export default Ember.Component.extend({
             value: 1,
             color : "grey"
         },
-      ]
+      ];
     }
 
   }),

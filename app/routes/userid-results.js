@@ -23,12 +23,6 @@ export default Ember.Route.extend({
         console.log(responseJSON.response);
         return responseJSON.response;
       }),
-      // allFriends: Ember.$.getJSON(allFriendsURL).then(function(responseJSON) {
-      //   console.log("all friends: ");
-      //   console.log(responseJSON.friendslist.friends);
-      //   return responseJSON.friendslist.friends;
-      // }),
     });
   },
-
 });

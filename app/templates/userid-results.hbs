@@ -23,11 +23,12 @@
       {{data-chart recentGames=model.recentGames}}
     </div>
     <div class="col-xs-6">
+      {{top-games-chart recentGames=model.recentGames}}
       {{user-gamelibrary model=model.allGames}}
     </div>
   </div>
 {{else}}
-  Sorry, that profile is set to Private!
+  <h2>Sorry, that profile is set to Private!</h2>
   <br>
   {{#link-to 'userid-search'}}Back{{/link-to}}
 {{/if}}
