@@ -7,5 +7,11 @@ export default Ember.Route.extend({
      console.log(responseJSON[params.appid].data);
      return responseJSON[params.appid].data;
    });
+  //  if ("true") {
+  //     return "Yes",
+  //  },
+
  },
+
+
 });
