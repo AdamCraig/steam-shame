@@ -1,9 +1,13 @@
 <h1>All Friends:</h1>
 {{#if model}}
+  <ul>
   {{#each model as |friend|}}
-    {{#link-to 'userid-results' friend.steamid }}{{friend.steamid}}{{/link-to}}
-
+    <div class="col-xs-1">
+      {{#link-to 'userid-results' friend.steamid }}{{friend.personaname}}{{/link-to}}<br>
+      <img src="{{friend.avatarmedium}}"/>
+    </div>
   {{/each}}
+</ul>
 {{else}}
   nothing in model!
 {{/if}}
