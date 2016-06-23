@@ -1,1 +1,3 @@
-
+.hideImg img {
+  display: none;
+}

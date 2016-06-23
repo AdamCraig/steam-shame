@@ -1,11 +1,50 @@
-<ul>
-  {{#each model as |achievement|}}
-  <li>
-    {{achievement.displayName}}
-    <br>
-    {{achievement.description}}
-    <br>
-    <img src={{achievement.icon}}>
-  </li>
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <h1>{{model.name}}</h1>
+
+      <img src={{model.header_image}}>
+      <br>
+      {{{model.detailed_description}}}
+    </div>
+
+
+    <div class="col-md-4 col-md-offset-2">
+      <h3>Score: {{model.metacritic.score}}</h3>
+      <h4>Platforms:</h4>
+      <h5>
+        {{#if model.platforms.linux}}
+          Linux: <b class="glyphicon glyphicon-ok"></b>
+          <br>
+          {{else}}
+          Linux: <b class="glyphicon glyphicon-remove"></b>
+          <br>
+        {{/if}}
+        {{#if model.platforms.mac}}
+          Mac: <b class="glyphicon glyphicon-ok"></b>
+          <br>
+          {{else}}
+          Mac: <b class="glyphicon glyphicon-remove"></b>
+          <br>
+        {{/if}}
+        {{#if model.platforms.windows}}
+          Windows: <b class="glyphicon glyphicon-ok"></b>
+          <br>
+          {{else}}
+          Windows: <b class="glyphicon glyphicon-remove"></b>
+          <br>
+        {{/if}}
+      </h5>
+
+      <h4>Required:</h4>
+        <h5>
+          <ul>
+            <div class="hideImg">{{{model.pc_requirements.minimum}}}</div>
+          </ul>
+        </h5>
+      <h4>Released: {{model.release_date.date}}</h4>
+    </div>
+  </div>
+  <hr>
+  <a href = {{model.website}}>Main Page</a> <a href= "http://store.steampowered.com/app/"{{model.steam_appid}}>Steam Page</a>
+</div>
