@@ -15,6 +15,15 @@ app.get('/steam/fudgethepolice', function(httpRequest, httpResponse) {
   });
 });
 
+app.get('/steam/allgames', function(httpRequest, httpResponse) {
+  var url = 'http://api.steampowered.com/ISteamApps/GetAppList/v0001/';//'?key=' + apiKey;
+  request.get(url, function(error, steamHttpResponse, steamHttpBody) {
+    httpResponse.setHeader('Content-Type', 'application/json');
+    httpResponse.setHeader('Access-Control-Allow-Origin', '*');
+    httpResponse.send(steamHttpBody);
+  });
+});
+
 app.get('/steam/:steamid/friends', function(httpRequest, httpResponse) {
   var url = 'http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=' + apiKey + '&steamid=' + httpRequest.params.steamid + '&relationship=friend';
   request.get(url, function(error, steamHttpResponse, steamHttpBody) {

@@ -6,6 +6,7 @@ export default Ember.Route.extend({
     var recentGamesURL = 'http://localhost:4000/steam/user/' + params.userid + '/profile/two-weeks-data';
     var allGamesURL = 'http://localhost:4000/steam/' + params.userid + '/allgames';
     var allFriendsURL = 'http://localhost:4000/steam/' + params.userid + '/friends';
+    var steamURL = 'http://localhost:4000/steam/allgames';
 
     return Ember.RSVP.hash({
       user: Ember.$.getJSON(userURL).then(function(responseJSON) {
@@ -19,9 +20,17 @@ export default Ember.Route.extend({
         return responseJSON.response.games;
       }),
       allGames: Ember.$.getJSON(allGamesURL).then(function(responseJSON) {
-        console.log("all games: ");
-        console.log(responseJSON.response);
-        return responseJSON.response;
+        return Ember.$.getJSON(steamURL).then(function(allSteamGames) {
+          for (var i = 0; i < responseJSON.response.games.length; i++) {
+            var foundIndex = allSteamGames.applist.apps.app.findIndex(function(game) {
+              return game.appid === responseJSON.response.games[i].appid;
+            });
+            responseJSON.response.games[i].name =  allSteamGames.applist.apps.app[foundIndex].name;
+          }
+          console.log("all games: ");
+          console.log(responseJSON.response);
+          return responseJSON.response;
+        })
       }),
       // allFriends: Ember.$.getJSON(allFriendsURL).then(function(responseJSON) {
       //   console.log("all friends: ");
