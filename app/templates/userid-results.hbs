@@ -20,6 +20,7 @@
 
       {{two-week-data recentGames=model.recentGames}}
       {{#link-to 'all-friends' model.user.steamid }} View Friends {{/link-to}}
+      {{data-chart recentGames=model.recentGames}}
     </div>
     <div class="col-xs-6">
       {{user-gamelibrary model=model.allGames}}
@@ -30,6 +31,3 @@
   <br>
   {{#link-to 'userid-search'}}Back{{/link-to}}
 {{/if}}
-
-
-{{data-chart recentGames=model.recentGames}}
