@@ -2,6 +2,6 @@
 
 <h3>Your Games: <h5>(ranked by playtime)</h5></h3>
 {{#each sortedGames as |game|}}
-  <h3>{{game.name}}</h3>
+  <h3>{{#link-to 'appid-results' game.appid}}{{game.name}}{{/link-to}}</h3>
   <p>Playtime: {{minutesConversion game.playtime_forever}}</p>
 {{/each}}

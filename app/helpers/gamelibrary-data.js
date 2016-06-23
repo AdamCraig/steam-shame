@@ -27,11 +27,12 @@ export function gamelibraryData(params) {
     }
   }
   return Ember.String.htmlSafe(
-  "<p>You have spend a total of " + (totalGameTime/60).toFixed(2) + " hours on steam (" + (totalGameTime/1440).toFixed(2) +  " days)</p>" +
+  "<p>You own " + allGamesCount + " games.</p>" +
+  "<p>You have spent a total of " + (totalGameTime/60).toFixed(2) + " hours on Steam (" + (totalGameTime/1440).toFixed(2) +  " days).</p>" +
   '<p>Your top game has occupied ' + (top1Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
   '<p>Your top 3 games have occupied ' + (top3Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
   '<p>Your top 10 games have occupied ' + (top10Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
-  '<p>Your last ' + unplayedGamesCount + " games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + '% of your library.</p>'
+  '<p>' + unplayedGamesCount + " of  your games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + '% of your library.</p>'
 
   );
 }
