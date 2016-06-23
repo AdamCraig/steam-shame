@@ -29,5 +29,6 @@ export default Ember.Route.extend({
       //   return responseJSON.friendslist.friends;
       // }),
     });
-  }
+  },
+
 });
