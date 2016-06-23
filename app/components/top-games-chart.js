@@ -80,7 +80,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color: "#878BB6"
+              color: "#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -90,7 +90,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -133,7 +133,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -143,7 +143,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -181,7 +181,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -191,7 +191,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -224,7 +224,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -234,7 +234,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -262,7 +262,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -272,7 +272,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -295,7 +295,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -305,7 +305,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -323,7 +323,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -333,7 +333,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
           {
               label: this.get('topTenGames')[3].name + " hours",
@@ -346,7 +346,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -356,7 +356,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[2].name + " hours",
               value : this.get('gameThreeHours'),
-              color : "#FF8153"
+              color : "#4CAF50"
           },
         ];
       } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1]) {
@@ -364,7 +364,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
           {
               label: this.get('topTenGames')[1].name + " hours",
@@ -377,7 +377,7 @@ export default Ember.Component.extend({
           {
               label: this.get('topTenGames')[0].name + " hours",
               value: this.get('gameOneHours'),
-              color:"#878BB6"
+              color:"#673AB7"
           },
         ];
       } else {

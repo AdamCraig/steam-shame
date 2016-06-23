@@ -10,7 +10,7 @@
         <div class="topten-gamebox">
           <b class="glyphicon glyphicon-heart"></b>
           <br>
-          {{#link-to 'appid-results' game.appid}}{{game.name}}{{/link-to}}
+          <span class="top-ten-link">{{#link-to 'appid-results' game.appid }}{{game.name}}{{/link-to}}</span>
           <br>
           {{minutesConversion game.playtime_forever}}
         </div>

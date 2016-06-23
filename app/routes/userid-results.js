@@ -21,11 +21,13 @@ export default Ember.Route.extend({
       }),
       allGames: Ember.$.getJSON(allGamesURL).then(function(responseJSON) {
         return Ember.$.getJSON(steamURL).then(function(allSteamGames) {
-          for (var i = 0; i < responseJSON.response.games.length; i++) {
-            var foundIndex = allSteamGames.applist.apps.app.findIndex(function(game) {
-              return game.appid === responseJSON.response.games[i].appid;
-            });
-            responseJSON.response.games[i].name =  allSteamGames.applist.apps.app[foundIndex].name;
+          if (responseJSON.response.games) {
+            for (var i = 0; i < responseJSON.response.games.length; i++) {
+              var foundIndex = allSteamGames.applist.apps.app.findIndex(function(game) {
+                return game.appid === responseJSON.response.games[i].appid;
+              });
+              responseJSON.response.games[i].name =  allSteamGames.applist.apps.app[foundIndex].name;
+            }
           }
           console.log("all games: ");
           console.log(responseJSON.response);
