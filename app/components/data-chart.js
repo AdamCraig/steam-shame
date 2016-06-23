@@ -20,7 +20,7 @@ export default Ember.Component.extend({
     return gameThreeHours;
   }),
 
-  recentGamesData: Ember.computed('this.gameOneHours', 'this.gameTwoHours', 'this.gameThreeHours', 'recentGames', function() {
+  recentGamesData: Ember.computed(function() {
     if (this.get('recentGames') !== undefined) {
       if (this.get('recentGames')[0] && this.get('recentGames')[1] && this.get('recentGames')[2]) {
         return [

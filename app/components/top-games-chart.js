@@ -73,58 +73,351 @@ export default Ember.Component.extend({
     return gameTenHours;
   }),
 
-  topGamesData: Ember.computed('this.gameOneHours', 'this.gameTwoHours', 'this.gameThreeHours', 'topTenGames', function() {
-    return [
-      {
-          label: this.get('topTenGames')[0].appid + " hours",
-          value: this.get('gameOneHours'),
-          color:"#878BB6"
-      },
-      {
-          label: this.get('topTenGames')[1].appid + " hours",
-          value : this.get('gameTwoHours'),
-          color : "#4ACAB4"
-      },
-      {
-          label: this.get('topTenGames')[2].appid + " hours",
-          value : this.get('gameThreeHours'),
-          color : "#FF8153"
-      },
-      {
-          label: this.get('topTenGames')[3].appid + " hours",
-          value : this.get('gameFourHours'),
-          color : "#FF5252"
-      },
-      {
-          label: this.get('topTenGames')[4].appid + " hours",
-          value : this.get('gameFiveHours'),
-          color : "#FF9800"
-      },
-      {
-          label: this.get('topTenGames')[5].appid + " hours",
-          value : this.get('gameSixHours'),
-          color : "#00BCD4"
-      },
-      {
-          label: this.get('topTenGames')[6].appid + " hours",
-          value : this.get('gameSevenHours'),
-          color : "#CDDC39"
-      },
-      {
-          label: this.get('topTenGames')[7].appid + " hours",
-          value : this.get('gameEightHours'),
-          color : "#C2185B"
-      },
-      {
-          label: this.get('topTenGames')[8].appid + " hours",
-          value : this.get('gameNineHours'),
-          color : "#FFC107"
-      },
-      {
-          label: this.get('topTenGames')[9].appid + " hours",
-          value : this.get('gameTenHours'),
-          color : "#536DFE"
+  topGamesData: Ember.computed(function() {
+    if (this.get('topTenGames') !== undefined) {
+      if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4] && this.get('topTenGames')[5] && this.get('topTenGames')[6] && this.get('topTenGames')[7] && this.get('topTenGames')[8] && this.get('topTenGames')[9]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color: "#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+          {
+              label: this.get('topTenGames')[5].appid + " hours",
+              value : this.get('gameSixHours'),
+              color : "#00BCD4"
+          },
+          {
+              label: this.get('topTenGames')[6].appid + " hours",
+              value : this.get('gameSevenHours'),
+              color : "#CDDC39"
+          },
+          {
+              label: this.get('topTenGames')[7].appid + " hours",
+              value : this.get('gameEightHours'),
+              color : "#C2185B"
+          },
+          {
+              label: this.get('topTenGames')[8].appid + " hours",
+              value : this.get('gameNineHours'),
+              color : "#FFC107"
+          },
+          {
+              label: this.get('topTenGames')[9].appid + " hours",
+              value : this.get('gameTenHours'),
+              color : "#536DFE"
+          }
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4] && this.get('topTenGames')[5] && this.get('topTenGames')[6] && this.get('topTenGames')[7] && this.get('topTenGames')[8]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+          {
+              label: this.get('topTenGames')[5].appid + " hours",
+              value : this.get('gameSixHours'),
+              color : "#00BCD4"
+          },
+          {
+              label: this.get('topTenGames')[6].appid + " hours",
+              value : this.get('gameSevenHours'),
+              color : "#CDDC39"
+          },
+          {
+              label: this.get('topTenGames')[7].appid + " hours",
+              value : this.get('gameEightHours'),
+              color : "#C2185B"
+          },
+          {
+              label: this.get('topTenGames')[8].appid + " hours",
+              value : this.get('gameNineHours'),
+              color : "#FFC107"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4] && this.get('topTenGames')[5] && this.get('topTenGames')[6] && this.get('topTenGames')[7]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+          {
+              label: this.get('topTenGames')[5].appid + " hours",
+              value : this.get('gameSixHours'),
+              color : "#00BCD4"
+          },
+          {
+              label: this.get('topTenGames')[6].appid + " hours",
+              value : this.get('gameSevenHours'),
+              color : "#CDDC39"
+          },
+          {
+              label: this.get('topTenGames')[7].appid + " hours",
+              value : this.get('gameEightHours'),
+              color : "#C2185B"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4] && this.get('topTenGames')[5] && this.get('topTenGames')[6]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+          {
+              label: this.get('topTenGames')[5].appid + " hours",
+              value : this.get('gameSixHours'),
+              color : "#00BCD4"
+          },
+          {
+              label: this.get('topTenGames')[6].appid + " hours",
+              value : this.get('gameSevenHours'),
+              color : "#CDDC39"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4] && this.get('topTenGames')[5]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+          {
+              label: this.get('topTenGames')[5].appid + " hours",
+              value : this.get('gameSixHours'),
+              color : "#00BCD4"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3] && this.get('topTenGames')[4]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+          {
+              label: this.get('topTenGames')[4].appid + " hours",
+              value : this.get('gameFiveHours'),
+              color : "#FF9800"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2] && this.get('topTenGames')[3]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+          {
+              label: this.get('topTenGames')[3].appid + " hours",
+              value : this.get('gameFourHours'),
+              color : "#FF5252"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1] && this.get('topTenGames')[2]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+          {
+              label: this.get('topTenGames')[2].appid + " hours",
+              value : this.get('gameThreeHours'),
+              color : "#FF8153"
+          },
+        ];
+      } else if (this.get('topTenGames')[0] && this.get('topTenGames')[1]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+          {
+              label: this.get('topTenGames')[1].appid + " hours",
+              value : this.get('gameTwoHours'),
+              color : "#4ACAB4"
+          },
+        ];
+      } else if (this.get('topTenGames')[0]) {
+        return [
+          {
+              label: this.get('topTenGames')[0].appid + " hours",
+              value: this.get('gameOneHours'),
+              color:"#878BB6"
+          },
+        ];
+      } else {
+        return [
+          {
+              label: "N/A",
+              value: 1,
+              color:"grey"
+          },
+          {
+              label: "N/A",
+              value: 1,
+              color : "grey"
+          },
+          {
+              label: "N/A",
+              value: 1,
+              color : "grey"
+          },
+        ];
       }
-    ];
+
+    } else {
+      return [
+        {
+            label: "N/A",
+            value: 1,
+            color:"grey"
+        },
+        {
+            label: "N/A",
+            value: 1,
+            color : "grey"
+        },
+        {
+            label: "N/A",
+            value: 1,
+            color : "grey"
+        },
+      ];
+    }
   })
 });
