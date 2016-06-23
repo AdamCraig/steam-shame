@@ -22,6 +22,7 @@
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0",
     "broccoli-asset-rev": "^2.4.2",
+    "dotenv": "^2.0.0",
     "ember-ajax": "0.7.1",
     "ember-bootstrap": "0.7.2",
     "ember-charts": "1.0.0",
