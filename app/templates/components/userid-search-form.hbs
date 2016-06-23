@@ -1,12 +1,13 @@
 <h1>User Profile ID Lookup</h1>
-
+<div class="col-md-5">
 <form>
   <div class="form-group">
-    {{input value=userId id="userId"}}
+    {{input value=userId class="form-control" id="userId"}}
   </div>
 
-  <h3>Not sure what your Steam ID is? Find it <a href="https://steamid.io/lookup">here</a>!</h3>
+  <div class="center"><h3>Not sure what your Steam ID is? Find it <a href="https://steamid.io/lookup">here</a>!</h3></div>
 
   <button class="btn btn-primary" {{action 'userIdSearch'}}>Submit</button>
 
 </form>
+</div>
