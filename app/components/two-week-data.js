@@ -16,36 +16,48 @@ export default Ember.Component.extend({
   }),
 
   gameOnePercentage: Ember.computed('recentGames', function() {
-    if (this.get('recentGames').length > 0) {
-      var gameOne = this.get('recentGames')[0];
-      var gameOneDecimal = (gameOne.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
-      var gameOnePercentage = gameOneDecimal * 100;
+    if (this.get('recentGames') !== undefined) {
+      if (this.get('recentGames').length > 0) {
+        var gameOne = this.get('recentGames')[0];
+        var gameOneDecimal = (gameOne.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
+        var gameOnePercentage = gameOneDecimal * 100;
 
-      return gameOnePercentage.toFixed(2);
+        return gameOnePercentage.toFixed(2);
+      }
+      return 0;
+    } else {
+      return false;
     }
-    return 0;
   }),
 
   gameTwoPercentage: Ember.computed('recentGames', function() {
-    if (this.get('recentGames').length > 1) {
-      var gameTwo = this.get('recentGames')[1];
-      var gameTwoDecimal = (gameTwo.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
-      var gameTwoPercentage = gameTwoDecimal * 100;
+    if (this.get('recentGames') !== undefined) {
+      if (this.get('recentGames').length > 1) {
+        var gameTwo = this.get('recentGames')[1];
+        var gameTwoDecimal = (gameTwo.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
+        var gameTwoPercentage = gameTwoDecimal * 100;
 
-      return gameTwoPercentage.toFixed(2);
+        return gameTwoPercentage.toFixed(2);
+      }
+      return 0;
+    } else {
+      return false;
     }
-    return 0;
   }),
 
   gameThreePercentage: Ember.computed('recentGames', function() {
-    if (this.get('recentGames').length > 2) {
-      var gameThree = this.get('recentGames')[2];
-      var gameThreeDecimal = (gameThree.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
-      var gameThreePercentage = gameThreeDecimal * 100;
+    if (this.get('recentGames') !== undefined) {
+      if (this.get('recentGames').length > 2) {
+        var gameThree = this.get('recentGames')[2];
+        var gameThreeDecimal = (gameThree.playtime_2weeks / 60) / this.get('twoWeekTotalHours');
+        var gameThreePercentage = gameThreeDecimal * 100;
 
-      return gameThreePercentage.toFixed(2);
+        return gameThreePercentage.toFixed(2);
+      }
+      return 0;
+    } else {
+      return false;
     }
-    return 0;
   }),
 
 });
