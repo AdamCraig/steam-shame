@@ -32,7 +32,8 @@ export function gamelibraryData(params) {
   '<p>Your top game has occupied ' + (top1Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
   '<p>Your top 3 games have occupied ' + (top3Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
   '<p>Your top 10 games have occupied ' + (top10Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
-  '<p>' + unplayedGamesCount + " of  your games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + '% of your library.</p>'
+  '<p>' + unplayedGamesCount + " of  your games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + '% of your library.</p>' +
+  '<p>Each game that you have played has an average of ' + ((totalGameTime/60) /(allGamesCount-unplayedGamesCount)).toFixed(2) + ' hours logged.</p>'
 
   );
 }

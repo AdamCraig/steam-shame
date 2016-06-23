@@ -12,6 +12,8 @@
 
       <h2>Location: {{#if model.user.locstatecode}} {{model.user.locstatecode}}{{#if model.user.loccountrycode}}, {{model.user.loccountrycode}}{{/if}}{{else}}{{model.user.loccountrycode}}{{/if}}</h2>
 
+      <p>TF2 backpack is worth: ${{pricing model}} or {{model.metal}} metal</p>
+
       {{#each model.recentGames as |recentGame|}}
         <h3>{{recentGame.name}}</h3>
         <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_icon_url}}.jpg">
