@@ -5,25 +5,22 @@ export default Ember.Component.extend({
   gameOneHours: Ember.computed('recentGames', function() {
     var gameOne = this.get('recentGames')[0];
     var gameOneHours = (gameOne.playtime_2weeks / 60).toFixed(2);
-
     return gameOneHours;
   }),
 
   gameTwoHours: Ember.computed('recentGames', function() {
     var gameTwo = this.get('recentGames')[1];
     var gameTwoHours = (gameTwo.playtime_2weeks / 60).toFixed(2);
-
     return gameTwoHours;
   }),
 
   gameThreeHours: Ember.computed('recentGames', function() {
     var gameThree = this.get('recentGames')[2];
     var gameThreeHours = (gameThree.playtime_2weeks / 60).toFixed(2);
-
     return gameThreeHours;
   }),
 
-  pieData: Ember.computed('this.gameOneHours', 'this.gameTwoHours', 'this.gameThreeHours', 'recentGames', function() {
+  recentGamesData: Ember.computed('this.gameOneHours', 'this.gameTwoHours', 'this.gameThreeHours', 'recentGames', function() {
     if (this.get('recentGames') !== undefined) {
       if (this.get('recentGames')[0] && this.get('recentGames')[1] && this.get('recentGames')[2]) {
         return [
