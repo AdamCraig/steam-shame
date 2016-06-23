@@ -1,3 +1,72 @@
 .hideImg img {
   display: none;
 }
+/*Andrew's CSS start*/
+body {
+  color: black;
+  background-color: #a3a3a3;
+}
+.center {
+  text-align: center;
+}
+.game-info {
+  border-radius: 10px;
+  border-color: #f7a42f;
+  border-width: 10px;
+  border-style: solid;
+  background-color: #858585;
+
+}
+.test {
+  font-size: 16pt;
+}
+.glyphicon-ok {
+  color: #00FF00;
+}
+
+.glyphicon-remove {
+  color: red;
+}
+.requirements {
+  font-size: 14pt;
+}
+
+
+.front {
+  text-align: center;
+  border-radius: 10px;
+  border-color: #f7a42f;
+  border-width: 10px;
+  border-style: solid;
+  background-color: #858585;
+}
+h1 {
+  font-size: 50px;
+}
+.description {
+  background-color: #858585;
+  border-radius: 10px;
+  border-color: #00b4cc;
+  border-width: 10px;
+  border-style: solid;
+}
+
+
+footer {
+  background-color: #858585;
+  left: 0;
+  right: 0;
+    position: fixed;
+  text-align: center;
+  bottom: 0;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+a {
+  color: #55ACFF;
+}
+
+/*Andrew's CSS end*/

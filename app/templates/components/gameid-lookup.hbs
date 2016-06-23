@@ -1,10 +1,12 @@
 <h1>Steam Game Lookup</h1>
+<div class="col-md-5">
 
 <form>
   <div class="form-group">
-    {{input value=appName id="appName"}}
+    {{input value=appName class="form-control" id="appName"}}
   </div>
 
   <button class="btn btn-primary" {{action 'appNameSearch'}}>Search</button>
 
 </form>
+</div>

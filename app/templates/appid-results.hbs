@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 description here">
         <h1>{{model.name}}</h1>
 
       <img src={{model.header_image}}>
       <br>
-      {{{model.detailed_description}}}
+      <div class="test">{{{model.detailed_description}}}</div>
     </div>
 
 
-    <div class="col-md-4 col-md-offset-2">
-      <h3>Score: {{model.metacritic.score}}</h3>
-      <h4>Platforms:</h4>
-      <h5>
+    <div class="col-md-4 col-md-offset-2 game-info">
+      <h2>Score: {{model.metacritic.score}}</h2>
+      <h2>Platforms:</h2>
+      <h3>
         {{#if model.platforms.linux}}
           Linux: <b class="glyphicon glyphicon-ok"></b>
           <br>
@@ -34,12 +34,12 @@
           Windows: <b class="glyphicon glyphicon-remove"></b>
           <br>
         {{/if}}
-      </h5>
+      </h3>
 
       <h4>Required:</h4>
         <h5>
           <ul>
-            <div class="hideImg">{{{model.pc_requirements.minimum}}}</div>
+            <div class="requirements"><div class="hideImg">{{{model.pc_requirements.minimum}}}</div></div>
           </ul>
         </h5>
       <h4>Released: {{model.release_date.date}}</h4>
