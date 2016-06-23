@@ -1,3 +1,38 @@
+body {
+  background-color: #a3a3a3;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+}
+
 .hideImg img {
   display: none;
+}
+
+.user-box {
+  color: white;
+  background-color: #858585;
+  padding: 10px;
+  border: solid #f7a42f 10px;
+}
+
+.shame-box-stats {
+  padding: 20px;
+  font-size: 14pt;
+}
+
+.shame-box-top-ten {
+  font-size: 14pt;
+}
+
+.topten-gamebox {
+  font-size: 12pt;
+  padding: 5px;
+  border: solid black 1px;
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+}
+
+.all-charts {
+  margin-top: 40px;
 }

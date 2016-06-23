@@ -1,13 +1,15 @@
-<h3>Total Play Time (past 2 weeks): {{twoWeekTotalHours}} hours</h3>
+<h3>Total Play Time (past 2 weeks):
+<br>
+{{twoWeekTotalHours}} hours</h3>
 
 {{#if gameOnePercentage}}
-<h4>{{recentGames.0.name}} - {{gameOnePercentage}}%</h4>
+<h4><img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGames.0.appid}}/{{recentGames.0.img_icon_url}}.jpg"> {{recentGames.0.name}} - {{gameOnePercentage}}%</h4>
 {{/if}}
 
 {{#if gameTwoPercentage}}
-<h4>{{recentGames.1.name}} - {{gameTwoPercentage}}%</h4>
+<h4><img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGames.1.appid}}/{{recentGames.1.img_icon_url}}.jpg"> {{recentGames.1.name}} - {{gameTwoPercentage}}%</h4>
 {{/if}}
 
 {{#if gameThreePercentage}}
-<h4>{{recentGames.2.name}} - {{gameThreePercentage}}%</h4>
+<h4><img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGames.2.appid}}/{{recentGames.2.img_icon_url}}.jpg"> {{recentGames.2.name}} - {{gameThreePercentage}}%</h4>
 {{/if}}

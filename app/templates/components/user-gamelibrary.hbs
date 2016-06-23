@@ -1,8 +1,20 @@
-<em>{{gamelibraryData sortedGames}}</em>
+<div class="row">
+  <div class="col-xs-6 shame-box-stats">
+    <em>{{gamelibraryData sortedGames}}</em>
+  </div>
 
-<h3>Your Games: <h5>(ranked by playtime)</h5></h3>
-
-{{#each topTenGames as |game|}}
-  <h3>{{#link-to 'appid-results' game.appid}}{{game.name}}{{/link-to}}</h3>
-  <p>Playtime: {{minutesConversion game.playtime_forever}}</p>
-{{/each}}
+  <div class="col-xs-6 shame-box-top-ten">
+    <h3>Your Top 10 Games: <h5>(ranked by playtime)</h5></h3>
+    {{#each topTenGames as |game|}}
+      <div class="col-xs-6">
+        <div class="topten-gamebox">
+          <b class="glyphicon glyphicon-heart"></b>
+          <br>
+          {{#link-to 'appid-results' game.appid}}{{game.name}}{{/link-to}}
+          <br>
+          {{minutesConversion game.playtime_forever}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

@@ -27,6 +27,7 @@ export function gamelibraryData(params) {
     }
   }
   return Ember.String.htmlSafe(
+  "<b class='glyphicon glyphicon-signal'></b>" +
   "<p>You own " + allGamesCount + " games.</p>" +
   "<p>You have spent a total of " + (totalGameTime/60).toFixed(2) + " hours on Steam (" + (totalGameTime/1440).toFixed(2) +  " days).</p>" +
   '<p>Your top game has occupied ' + (top1Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +

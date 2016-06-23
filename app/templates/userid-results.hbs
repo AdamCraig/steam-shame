@@ -1,32 +1,43 @@
 {{#if model.allGames.games.length}}
+
   <div class="row">
-    <div class="col-xs-6">
-      <h1>{{model.user.personaname}}</h1>
-      <h2>Steam ID: {{model.user.steamid}}</h2>
-      {{#if model.user.gameextrainfo}}
-      <h2>IN GAME: {{model.user.gameextrainfo}}</h2>
-      {{/if}}
-      <h2>{{get-online-status user=model.user}}</h2>
-      <h2>Member since {{get-time-created user=model.user}}</h2>
-      <img src={{model.user.avatarfull}}>
-
-      <h2>Location: {{#if model.user.locstatecode}} {{model.user.locstatecode}}{{#if model.user.loccountrycode}}, {{model.user.loccountrycode}}{{/if}}{{else}}{{model.user.loccountrycode}}{{/if}}</h2>
-
-      {{#each model.recentGames as |recentGame|}}
-        <h3>{{recentGame.name}}</h3>
-        <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_icon_url}}.jpg">
-        <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_logo_url}}.jpg">
-      {{/each}}
-
-      {{two-week-data recentGames=model.recentGames}}
-      {{#link-to 'all-friends' model.user.steamid }} View Friends {{/link-to}}
-      {{data-chart recentGames=model.recentGames}}
+    <div class="user-data col-xs-4">
+      <div class="user-box">
+        <h1>{{model.user.personaname}}</h1>
+        <h4>Steam ID: {{model.user.steamid}}</h4>
+        {{#if model.user.gameextrainfo}}
+        <h4>IN GAME: {{model.user.gameextrainfo}}</h4>
+        {{/if}}
+        <h4>{{get-online-status user=model.user}}</h4>
+        <h4>Member since {{get-time-created user=model.user}}</h4>
+        <img src={{model.user.avatarfull}}>
+        <h4>{{#if model.user.locstatecode}} Location: {{model.user.locstatecode}}{{#if model.user.loccountrycode}}, {{model.user.loccountrycode}}{{/if}}{{else}} {{model.user.loccountrycode}}{{/if}}</h4>
+        {{#link-to 'all-friends' model.user.steamid }}
+         <button class="btn btn-default">View Friends <b class="glyphicon glyphicon-user"></b></button>
+        {{/link-to}}
+      </div>
     </div>
-    <div class="col-xs-6">
-      {{top-games-chart allGames=model.allGames}}
+
+    <div class="shame-box col-xs-8">
       {{user-gamelibrary model=model.allGames}}
     </div>
   </div>
+
+  <div class="row all-charts">
+    <div class="col-xs-4 recent-games-data">
+      {{data-chart recentGames=model.recentGames}}
+    </div>
+    <div class="two-weeks-data col-xs-4">
+      {{two-week-data recentGames=model.recentGames}}
+      {{#each model.recentGames as |recentGame|}}
+        <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{recentGame.appid}}/{{recentGame.img_logo_url}}.jpg">
+      {{/each}}
+    </div>
+    <div class="col-xs-4 top-games-data">
+      {{top-games-chart allGames=model.allGames}}
+    </div>
+  </div>
+
 {{else}}
   <h2>Sorry, that profile is set to Private!</h2>
   <br>
