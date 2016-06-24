@@ -39,7 +39,10 @@ export default Ember.Route.extend({
       }),
       metal: Ember.$.getJSON(urlMetal).then(function(responseJSON) {
         console.log(responseJSON.response.players[params.userid]);
-        return responseJSON.response.players[params.userid].backpack_value['440'];
+        if (responseJSON.response.players[params.userid].backpack_value) {
+          return responseJSON.response.players[params.userid].backpack_value['440'];
+        }
+        return 0;
       }),
 
       metalprice: Ember.$.getJSON(urlPrice).then(function(responseJSON) {
