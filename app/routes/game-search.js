@@ -18,8 +18,8 @@ export default Ember.Route.extend({
           if (foundGameID === "No Match") {
             alert("No match found. Try again!");
           } else {
-            self.transitionTo('game-results', foundGameID);
-          }  
+            self.transitionTo('appid-results', foundGameID);
+          }
         };
         return getGameID(params.game);
       });

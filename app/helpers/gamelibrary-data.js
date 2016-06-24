@@ -29,13 +29,12 @@ export function gamelibraryData(params) {
   return Ember.String.htmlSafe(
   "<b class='glyphicon glyphicon-signal'></b>" +
   "<p>You own " + allGamesCount + " games.</p>" +
-  "<p>You have spent a total of " + (totalGameTime/60).toFixed(2) + " hours on Steam (" + (totalGameTime/1440).toFixed(2) +  " days).</p>" +
-  '<p>Your top game has occupied ' + (top1Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
-  '<p>Your top 3 games have occupied ' + (top3Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
-  '<p>Your top 10 games have occupied ' + (top10Total/totalGameTime*100).toFixed(2) + '% of your total Steam time.</p>' +
-  '<p>' + unplayedGamesCount + " of  your games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + '% of your library.</p>' +
-  '<p>Each game that you have played has an average of ' + ((totalGameTime/60) /(allGamesCount-unplayedGamesCount)).toFixed(2) + ' hours logged.</p>'
-
+  "<p><b class='glyphicon glyphicon-time'></b> You have spent a total of " + (totalGameTime/60).toFixed(2) + " hours on Steam (" + (totalGameTime/1440).toFixed(2) +  " days).</p>" +
+  "<p><b class='glyphicon glyphicon-heart'></b> Your top game has occupied " + (top1Total/totalGameTime*100).toFixed(2) + "% of your total Steam time.</p>" +
+  "<p><b class='glyphicon glyphicon-heart-empty'></b> Your top 3 games have occupied " + (top3Total/totalGameTime*100).toFixed(2) + "% of your total Steam time.</p>" +
+  "<p><b class='glyphicon glyphicon-refresh'></b> Your top 10 games have occupied " + (top10Total/totalGameTime*100).toFixed(2) + "% of your total Steam time.</p>" +
+  "<p><b class='glyphicon glyphicon-ban-circle'></b> " + unplayedGamesCount + " of  your games have never been played. That's " + (100*unplayedGamesCount/allGamesCount).toFixed(2) + "% of your library.</p>" +
+  "<p><p><b class='glyphicon glyphicon-hourglass'></b> Each game that you have played has an average of " + ((totalGameTime/60) /(allGamesCount-unplayedGamesCount)).toFixed(2) + " hours logged.</p>"
   );
 }
 

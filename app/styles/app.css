@@ -6,8 +6,47 @@ body {
   text-align: center;
 }
 
+.glyphicon-home {
+  color:green;
+}
+
+.glyphicon-user {
+ color: orange;
+}
+
+.glyphicon-tower {
+  color: crimson;
+}
+
+.glyphicon-search {
+  color: blue;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #00b4cc;
+}
+
+.white-link {
+  color: white;
+}
+
+.repo {
+  float: right;
+}
+
 .hideImg img {
   display: none;
+}
+
+.form-control {
+  height: 150px;
+  font-size: 36pt;
+  text-align: center;
+}
+
+.submit-button {
+  font-size: 36pt;
 }
 
 .user-box {
@@ -62,13 +101,14 @@ body {
 .center {
   text-align: center;
 }
+
 .game-info {
   border-radius: 10px;
   border-color: #f7a42f;
   border-width: 10px;
   border-style: solid;
   background-color: #858585;
-
+  text-align: left;
 }
 .test {
   font-size: 16pt;
@@ -84,7 +124,6 @@ body {
   font-size: 14pt;
 }
 
-
 .front {
   text-align: center;
   border-radius: 10px;
@@ -92,16 +131,24 @@ body {
   border-width: 10px;
   border-style: solid;
   background-color: #858585;
+  padding-bottom: 17px;
 }
+
 h1 {
   font-size: 50px;
 }
+
 .description {
+  padding: 10px;
   background-color: #858585;
   border-radius: 10px;
   border-color: #00b4cc;
   border-width: 10px;
   border-style: solid;
+}
+
+.description img {
+  max-width: 100%;
 }
 
 

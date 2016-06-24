@@ -1,11 +1,9 @@
-<h1>Steam App ID Lookup</h1>
-<div class="col-md-5">
+<h1>Steam App ID Search</h1>
 <form>
   <div class="form-group">
-    {{input value=appId class="form-control" id="appId"}}
+    {{input value=appId class="form-control" id="appId" type="number"}}
   </div>
 
-  <button class="btn btn-primary" {{action 'appIdSearch'}}>Submit</button>
+  <button class="btn btn-info submit-button" {{action 'appIdSearch'}}>Submit</button>
 
 </form>
-</div>
