@@ -157,6 +157,7 @@ h1 {
   border-color: #00b4cc;
   border-width: 10px;
   border-style: solid;
+  overflow: hidden;
 }
 
 .description img {

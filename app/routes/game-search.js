@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     gameSearch(params) {
       var self = this;
       var allGamesURL = 'http://localhost:4000/steam/games';
-      var appID = Ember.$.getJSON(allGamesURL).then(function(response) {
+      Ember.$.getJSON(allGamesURL).then(function(response) {
         var list = response.applist.apps.app;
         var foundGameID = "No Match";
 

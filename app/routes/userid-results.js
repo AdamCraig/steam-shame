@@ -5,7 +5,6 @@ export default Ember.Route.extend({
     var userURL = 'http://localhost:4000/steam/user/' + params.userid + '/profile';
     var recentGamesURL = 'http://localhost:4000/steam/user/' + params.userid + '/profile/two-weeks-data';
     var allGamesURL = 'http://localhost:4000/steam/' + params.userid + '/allgames';
-    var allFriendsURL = 'http://localhost:4000/steam/' + params.userid + '/friends';
     var steamURL = 'http://localhost:4000/steam/games';
     var urlMetal = 'http://localhost:4000/steam/'+ params.userid + '/hats/';
     var urlPrice = 'http://localhost:4000/currencyprice';
@@ -35,7 +34,7 @@ export default Ember.Route.extend({
           console.log("all games: ");
           console.log(responseJSON.response);
           return responseJSON.response;
-        })
+        });
       }),
       metal: Ember.$.getJSON(urlMetal).then(function(responseJSON) {
         console.log(responseJSON.response.players[params.userid]);
