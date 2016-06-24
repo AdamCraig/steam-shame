@@ -2,12 +2,13 @@
 {{#if model}}
   <ul>
   {{#each model as |friend|}}
-    <div class="col-xs-1">
-      {{#link-to 'userid-results' friend.steamid }}{{friend.personaname}}{{/link-to}}<br>
-      <img src="{{friend.avatarmedium}}"/>
+    <div class="col-xs-3 friend-box">
+      {{#link-to 'userid-results' friend.steamid class="white-link friend-name" }}{{friend.personaname}}<br>
+      <img src="{{friend.avatarfull}}"/>
+      {{/link-to}}
     </div>
   {{/each}}
 </ul>
 {{else}}
-  nothing in model!
+  No friends!
 {{/if}}

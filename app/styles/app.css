@@ -85,6 +85,18 @@ a:hover {
   overflow: hidden;
 }
 
+.friend-name {
+  font-size: 22pt;
+}
+
+.friend-box img {
+  height: 200px;
+}
+
+.friend-box:hover {
+  opacity: 0.5;
+}
+
 .all-charts {
   margin-top: 40px;
 }
